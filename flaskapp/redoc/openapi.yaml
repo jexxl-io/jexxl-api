@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: Jexxl API
+  description: Documentation designed to facilitate the understanding of jexxl.io API endpoints.
+  x-logo:
+    url: 'https://redocly.github.io/redoc/petstore-logo.png'
+    altText: Petstore logo
+  version: 1.0.0
+servers:
+  - url: http://192.168.1.78:65190
+    description: Development server
+  - url: https://api.jexxl.io
+    description: Production server
+paths:
+  /users/{userId}:
+    get:
+      summary: Get user by ID
+      description: Returns a user object based on the provided user ID.
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: User object successfully returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    format: int64
+                    description: The user ID
+                  name:
+                    type: string
+                    description: The user's name
+                  email:
+                    type: string
+                    format: email
+                    description: The user's email address
+        "404":
+          description: User not found
+        "500":
+          description: Internal server error
+      security:
+        - basicAuth: []
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: The user ID
+        name:
+          type: string
+          description: The user's name
+        email:
+          type: string
+          format: email
+          description: The user's email address
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+theme:
+  openapi:
+    theme:
+      sidebar:
+        backgroundColor: 'red'
+      rightPanel:
+        textColor: 'ivory'
+        backgroundColor: '#001036'
+      typography:
+        links:
+          color: '0090cc'
