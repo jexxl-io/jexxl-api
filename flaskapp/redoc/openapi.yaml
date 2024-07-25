@@ -3,8 +3,8 @@ info:
   title: Jexxl API
   description: Documentation designed to facilitate the understanding of jexxl.io API endpoints.
   x-logo:
-    url: 'https://redocly.github.io/redoc/petstore-logo.png'
-    altText: Petstore logo
+    url: 'https://github.com/jexxl-io/jexxl-api/blob/main/flaskapp/static/images/api-logo.png'
+    altText: Jexxl logo
   version: 1.0.0
 servers:
   - url: http://192.168.1.78:65190
