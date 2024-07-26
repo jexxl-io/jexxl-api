@@ -68,14 +68,10 @@ components:
     basicAuth:
       type: http
       scheme: basic
-theme:
-  openapi:
-    theme:
-      sidebar:
-        backgroundColor: 'red'
-      rightPanel:
-        textColor: 'ivory'
-        backgroundColor: '#001036'
-      typography:
-        links:
-          color: '0090cc'
+referenceDocs:
+  htmlTemplate: /usr/share/nginx/html/index.html
+  pagination: section
+  theme:
+    colors:
+      primary:
+        main: "red"

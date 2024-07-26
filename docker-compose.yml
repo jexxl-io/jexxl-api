@@ -27,7 +27,7 @@ services:
       PAGE_FAVICON: /api-logo.svg
       PAGE_TITLE: Jexxl API Docs
       REDOC_OPTIONS: >-
-        disable-search=false
+        disable-search=true
     networks:
       - jexxl2-network
 
