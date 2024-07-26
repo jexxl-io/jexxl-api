@@ -20,10 +20,11 @@ services:
     ports:
       - "65200:80"
     volumes:
-      - ./flaskapp/redoc/openapi.yaml:/usr/share/nginx/html/openapi.yaml
+      - ./flaskapp/redoc/redoc.yaml:/usr/share/nginx/html/redoc.yaml
+      - ./flaskapp/redoc/redoc.html:/usr/share/nginx/html/redoc.html
       - ./flaskapp/static/images/api-logo.svg:/usr/share/nginx/html/api-logo.svg
     environment:
-      SPEC_URL: /openapi.yaml
+      SPEC_URL: /redoc.yaml
       PAGE_FAVICON: /api-logo.svg
       PAGE_TITLE: Jexxl API Docs
       REDOC_OPTIONS: >-

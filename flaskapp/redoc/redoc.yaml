@@ -69,7 +69,7 @@ components:
       type: http
       scheme: basic
 referenceDocs:
-  htmlTemplate: /usr/share/nginx/html/index.html
+  htmlTemplate: redoc.html
   pagination: section
   theme:
     colors:
