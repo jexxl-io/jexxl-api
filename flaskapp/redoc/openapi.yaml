@@ -3,7 +3,7 @@ info:
   title: Jexxl API
   description: Documentation designed to facilitate the understanding of jexxl.io API endpoints.
   x-logo:
-    url: 'https://raw.githubusercontent.com/jexxl-io/jexxl-api/main/flaskapp/static/images/api-logo.png'
+    url: 'https://raw.githubusercontent.com/jexxl-io/jexxl-api/main/flaskapp/static/images/jexxl-full-logo.png'
     altText: Jexxl logo
   version: 1.0.0
 servers:
