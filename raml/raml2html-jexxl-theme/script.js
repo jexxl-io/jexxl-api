@@ -139,18 +139,15 @@ function bindFilters() {
 
 }
 
-function addLogo() {
-	// Create image element
+function addSidebarLogo() {
 	var sidebarLogo = document.createElement("img");
-	sidebarLogo.src = "C:/jexxl-api/flaskapp/static/images/jexxl-full-logo.png"; // Update with the actual path to your logo image
-	sidebarLogo.alt = "Logo";
-	sidebarLogo.style.maxWidth = "200px"; // Adjust the size as needed
+	sidebarLogo.src = "../static/images/jexxl-full-logo.png";
+	sidebarLogo.alt = "Jexxl Logo";
+	sidebarLogo.style.maxWidth = "150px";
 
-	// Find the target element
 	var sidebarTitle = document.querySelector(".sidebar__logo__title");
 
 	if (sidebarTitle) {
-		// Insert the logo after the target element
 		sidebarTitle.parentNode.insertBefore(sidebarLogo, sidebarTitle.nextSibling);
 	} else {
 		console.error("Target element not found.");
@@ -163,6 +160,6 @@ window.addEventListener("load", function () {
 	bindCollapsibles();
 	bindTabs();
 	bindFilters();
-	addLogo();
+	addSidebarLogo();
 
 });
