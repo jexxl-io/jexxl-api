@@ -10,15 +10,15 @@ logging.basicConfig(filename='./flaskapp/access.log', level=logging.INFO,
 
 @app.route('/', methods=['GET'])
 def home():
-    app.logger.info('Request to \'/\' was made')
+    app.logger.info('Request to \'api.jexxl.io/\' was made')
 
     return render_template('index.html')
 
 @app.route('/api-docs')
 def get_api_docs():
-    app.logger.info('Redirecting to Redocly documentation')
+    app.logger.info('Loading API Docs...')
     
-    return redirect('http://192.168.1.78:65200', code=302)
+    return render_template('api-doc.html')
 
 @app.route('/users/<int:userId>', methods=['GET'])
 def get_user(userId):

@@ -2,33 +2,13 @@ services:
   # Jexxl API Flask App
   flaskapp:
     build: ./flaskapp
-    image: jexxl-flaskapp
+    image: flaskapp-jexxl-api
     container_name: flaskapp
     ports:
       - "65190:65190"
     volumes:
-      - ./flaskapp/access.log:/app/flaskapp/access.log
-      - ./flaskapp/templates:/app/flaskapp/templates
-      - ./flaskapp/static:/app/flaskapp/static
-    networks:
-      - jexxl2-network
-
-  # Jexxl API Documentation
-  api-docs:
-    image: redocly/redoc:latest
-    container_name: api-docs
-    ports:
-      - "65200:80"
-    volumes:
-      - ./flaskapp/redoc/redoc.yaml:/usr/share/nginx/html/redoc.yaml
-      - ./flaskapp/redoc/redoc.html:/usr/share/nginx/html/redoc.html
-      - ./flaskapp/static/images/api-logo.svg:/usr/share/nginx/html/api-logo.svg
-    environment:
-      SPEC_URL: /redoc.yaml
-      PAGE_FAVICON: /api-logo.svg
-      PAGE_TITLE: Jexxl API Docs
-      REDOC_OPTIONS: >-
-        disable-search=true
+      - ./flaskapp:/app/flaskapp
+      - ./raml:/app/raml
     networks:
       - jexxl2-network
 
